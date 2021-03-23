@@ -13,8 +13,10 @@ Use your own certs and insert them into certs directory
 Just do not forget to edit the docker-compose.yml file:
 
 ```
+...
       - NGINX_SSL_CERT=./certs/self_signed_cert.pem        # edit to your cert
       - NGINX_SSL_KEY=./certs/self_signed_key.pem          # edit to your key
+...
 ```
 
 or
