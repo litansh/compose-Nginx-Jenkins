@@ -39,5 +39,7 @@ $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 Great Effort!
 ---
-You just deployed two containers running self-signed TLS Nginx reverse proxy to a Jenkins server with persistent log and jenkins home directory data and on-boarded jenkins plugins built by docker-compose. Are you ready for some CI ?
+You just deployed two containers running self-signed TLS Nginx reverse proxy to a Jenkins server with persistent log and jenkins home directory data and on-boarded jenkins plugins built by docker-compose. 
+---
+Are you ready to CI stuff ?
 ---
