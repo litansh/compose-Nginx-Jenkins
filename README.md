@@ -7,10 +7,6 @@ As part of our automation efforts, we want to have a running CI server. It shoul
 
 For the CI server we chose Jenkins that will run inside a docker container. It should be exposed behind a nginx’s server block, inside a docker container as well. We also want this entire environment to go up on a single click - for that we chose docker-compose.  
 
-
-
-
-
 # Objectives:
 
 # Jenkins
@@ -52,4 +48,9 @@ job-dsl
 mercurial
 bitbucket
 make nginx add a ‘X-Forwarded-For’ header 
+
+# Usage:
+
+From the top level of the cloned repository, create the directories that will be used for managing the data on the host.
+mkdir -p jenkins_home/ logs/nginx/ certs/
 
