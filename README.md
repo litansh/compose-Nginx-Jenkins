@@ -15,6 +15,12 @@ openssl req -x509 \
   -out self_signed_cert.pem \
   -days 365 \
   -nodes -subj '/CN='$(hostname)
+  
+# Stage 2 - git clone
+
+run:
+
+git clone https://github.com/litansh/compose-Nginx-Jenkins.git
 
 # Stage 2 - Deploy
 Use docker-compose from the top level of the repository to run the containers:
