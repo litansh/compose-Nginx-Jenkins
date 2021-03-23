@@ -1,0 +1,9 @@
+icon-shim:latest
+credentials:latest
+authentication-tokens:latest
+docker-commons:latest
+durable-task:latest
+git:latest
+job-dsl:latest
+mercurial:latest
+bitbucket:latest
