@@ -39,7 +39,7 @@ $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 Congrats!
 ---
-You have deployed a self-signed TLS reverse proxy to a Jenkins server with persistent data and on-board plugins built by docker-compose.
+You have deployed a self-signed TLS reverse proxy to a Jenkins server with persistent log and jenkins home directory data and on-board plugins built by docker-compose.
 ---
 
 # Motivation
