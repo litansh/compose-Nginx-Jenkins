@@ -51,7 +51,19 @@ mercurial
 bitbucket
 make nginx add a ‘X-Forwarded-For’ header 
 
-# Deploy
+# Stage 1 - Create self signed certificates
+Generate your certificates (example using .pem format)
+
+mkdir -p certs
+cd certs
+openssl req -x509 \
+  -newkey rsa:4096 \
+  -keyout self_signed_key.pem \
+  -out self_signed_cert.pem \
+  -days 365 \
+  -nodes -subj '/CN='$(hostname)
+
+# Stage 2 - Deploy
 Use docker-compose from the top level of the repository to run the containers:
 
 docker-compose up -d
@@ -60,13 +72,4 @@ To retrieve the initialAdminPassword:
 
 $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
-# Example using self signed certificates
-Generate your certificates (example using .pem format)
 
-cd certs
-openssl req -x509 \
-  -newkey rsa:4096 \
-  -keyout self_signed_key.pem \
-  -out self_signed_cert.pem \
-  -days 365 \
-  -nodes -subj '/CN='$(hostname)
