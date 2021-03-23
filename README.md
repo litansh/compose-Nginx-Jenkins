@@ -41,13 +41,14 @@ Congrats!
 You have deployed a self-signed TLS reverse proxy to a Jenkins server with persistent data and on-board plugins built by docker-compose.
 
 
-
+---
 # Motivation
 
 As part of our automation efforts, we want to have a running CI server. It should be exposed globally and always willing to accept new jobs. We also want this CI server not to be exposed directly, as well as to allow presenting server TLS certificates to clients.
 
 For the CI server we chose Jenkins that will run inside a docker container. It should be exposed behind a nginx’s server block, inside a docker container as well. We also want this entire environment to go up on a single click - for that we chose docker-compose.  
-
+---
+---
 # Objectives:
 
 <h2> Jenkins</h2>
@@ -98,3 +99,4 @@ mercurial
 bitbucket
 
 make nginx add a ‘X-Forwarded-For’ header 
+---
