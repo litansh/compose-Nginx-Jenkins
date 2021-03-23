@@ -4,9 +4,9 @@ docker-compose build Dockerfile Jenkins and Nginx containers
 # Stage 1 - git clone
 
 run:
-
+```
 git clone https://github.com/litansh/compose-Nginx-Jenkins.git
-
+```
 
 # Stage 2 - Create self signed certificate
 Use your own certs and insert them into certs directory 
