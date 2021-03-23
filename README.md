@@ -36,16 +36,26 @@ in case of the env crashes, we’d like to have the logs of the nginx & jenkins 
 
 generate self signed TLS certificates and make the nginx send them to accessing clients (of course the protocol should change to https)
 
-lunch the jenkins server with the following plugins installed
+lunch the jenkins server with the following plugins installed:
+
 icon-shim
+
 credentials 
+
 authentication-tokens
+
 docker-commons
+
 durable-task
+
 git
+
 job-dsl
+
 mercurial
+
 bitbucket
+
 make nginx add a ‘X-Forwarded-For’ header 
 
 # Stage 1 - Persistent Data
