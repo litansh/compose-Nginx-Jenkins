@@ -32,3 +32,38 @@ services:
 #      - ${NGINX_SSL_CERT:-./certs/self_signed_cert.pem}:/etc/nginx/ssl/server.crt # uncomment for SSL
 #      - ${NGINX_SSL_KEY:-./certs/self_signed_key.pem}:/etc/nginx/ssl/server.key   # uncomment for SSL
     restart: always
+version: '3.6'
+services:
+
+  jenkins:
+    image: jenkins.nginx.docker:lts
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: jenkins
+    ports:
+      - '2022:22'
+      - '50000:50000'
+      - '50022:50022'
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - UID_JENKINS=1000
+      - GID_JENKINS=1000
+      - JENKINS_OPTS="--prefix=/jenkins"
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - NGINX_DEFAULT_CONF=./nginx/default.conf
+      - ./logs/nginx:/var/log/nginx
+      - NGINX_SSL_CERT=./certs/self_signed_cert.pem
+      - NGINX_SSL_KEY=./certs/self_signed_key.pem
+    restart: always
+
