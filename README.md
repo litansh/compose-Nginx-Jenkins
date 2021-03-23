@@ -4,7 +4,7 @@ docker-compose build Dockerfile Jenkins and Nginx containers
 # Stage 1 - Persistent Data
 From the top level of the cloned repository, create the directories that will be used for managing the data on the host:
 
-mkdir -p jenkins_home/ logs/nginx/ certs/
+mkdir -p jenkins_home/ logs/nginx/
 
 
 # Stage 2 - Create self signed certificates
