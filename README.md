@@ -55,6 +55,7 @@ make nginx add a ‘X-Forwarded-For’ header
 Generate your certificates (example using .pem format)
 
 mkdir -p certs
+
 cd certs
 openssl req -x509 \
   -newkey rsa:4096 \
