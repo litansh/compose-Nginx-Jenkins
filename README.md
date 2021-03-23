@@ -51,6 +51,10 @@ make nginx add a ‘X-Forwarded-For’ header
 
 # Usage:
 
-From the top level of the cloned repository, create the directories that will be used for managing the data on the host.
+From the top level of the cloned repository, create the directories that will be used for managing the data on the host:
 mkdir -p jenkins_home/ logs/nginx/ certs/
+
+run:
+docker-compose build
+docker-compose up
 
