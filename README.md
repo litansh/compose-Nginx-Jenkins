@@ -21,7 +21,6 @@ listen on HTTP, port 80
 forward to port 8080 of the jenkins server
 log every access to the access.log
 
-
 # Docker Compose
 
 running the docker compose should:
@@ -36,7 +35,8 @@ in case of the env crashes, we’d like to have the logs of the nginx & jenkins 
 # Bonuses
 
 generate self signed TLS certificates and make the nginx send them to accessing clients (of course the protocol should change to https)
-lunch the jenkins server with the following plugins installed # plugins.txt
+
+lunch the jenkins server with the following plugins installed
 icon-shim
 credentials 
 authentication-tokens
