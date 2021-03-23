@@ -31,8 +31,7 @@ services:
       - ./logs/nginx:/var/log/nginx
       - ./nginx/default.con:/etc/nginx/conf.d
       - ./certs:/etc/nginx/ssl
-      - NGINX_SSL_CERT=./certs/self_signed_cert.pem
-      - NGINX_SSL_KEY=./certs/self_signed_key.pem
+      - NGINX_SSL_CERT=./certs/server.crt
+      - NGINX_SSL_KEY=./certs/server.key
     restart: always
-
 
