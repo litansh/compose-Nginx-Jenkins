@@ -15,7 +15,8 @@ or
 
 Generate your certificates (example using .pem format)
 
-```cd certs
+```
+cd certs
 openssl req -x509 \
   -newkey rsa:4096 \
   -keyout self_signed_key.pem \
