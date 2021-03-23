@@ -50,6 +50,7 @@ make nginx add a ‘X-Forwarded-For’ header
 
 # Stage 1 - Persistent Data
 From the top level of the cloned repository, create the directories that will be used for managing the data on the host:
+
 mkdir -p jenkins_home/ logs/nginx/ certs/
 
 
