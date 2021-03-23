@@ -29,7 +29,9 @@ services:
     volumes:
       - NGINX_DEFAULT_CONF=./nginx/default.conf
       - ./logs/nginx:/var/log/nginx
+      - ./certs:/etc/nginx/ssl
       - NGINX_SSL_CERT=./certs/self_signed_cert.pem
       - NGINX_SSL_KEY=./certs/self_signed_key.pem
     restart: always
+
 
