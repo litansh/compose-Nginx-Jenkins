@@ -32,12 +32,14 @@ manage to launch the env
 # General
 
 in case of the env crashes, we’d like to have the logs of the nginx & jenkins as well as the jenkins home directory saved
- 
+
+#From the top level of the cloned repository, create the directories that will be used for managing the data on the host:
+mkdir -p jenkins_home/ logs/nginx/ certs/
 
 # Bonuses
 
 generate self signed TLS certificates and make the nginx send them to accessing clients (of course the protocol should change to https)
-lunch the jenkins server with the following plugins installed
+lunch the jenkins server with the following plugins installed # plugins.txt
 icon-shim
 credentials 
 authentication-tokens
@@ -48,11 +50,6 @@ job-dsl
 mercurial
 bitbucket
 make nginx add a ‘X-Forwarded-For’ header 
-
-# Usage
-
-From the top level of the cloned repository, create the directories that will be used for managing the data on the host:
-mkdir -p jenkins_home/ logs/nginx/ certs/
 
 # Deploy
 Use docker-compose from the top level of the repository to run the containers:
