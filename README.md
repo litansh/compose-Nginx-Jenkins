@@ -18,6 +18,7 @@ openssl req -x509 \
 
 # Stage 2 - Deploy
 Use docker-compose from the top level of the repository to run the containers:
+Use the -d flag to daemonize the process.
 
 docker-compose up -d
 
