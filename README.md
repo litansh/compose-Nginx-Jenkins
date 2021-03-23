@@ -59,3 +59,14 @@ docker-compose up -d
 To retrieve the initialAdminPassword:
 
 $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+# Example using self signed certificates
+Generate your certificates (example using .pem format)
+
+cd certs
+openssl req -x509 \
+  -newkey rsa:4096 \
+  -keyout self_signed_key.pem \
+  -out self_signed_cert.pem \
+  -days 365 \
+  -nodes -subj '/CN='$(hostname)
