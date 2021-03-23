@@ -16,7 +16,7 @@ or
 Generate your certificates (example using .pem format)
 
 ```
-cd certs
+$ cd certs
 openssl req -x509 \
   -newkey rsa:4096 \
   -keyout self_signed_key.pem \
@@ -28,13 +28,13 @@ openssl req -x509 \
 # Stage 3 - Deploy
 Use docker-compose from the top level of the repository to run the containers:
 Use the -d flag to daemonize the process.
-
+```
 docker-compose up -d
-
+```
 To retrieve the initialAdminPassword:
-
+```
 $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
-
+```
 # Stage 4 - Enjoy!
 
 Congrats!
