@@ -3,7 +3,9 @@ docker-compose build Dockerfile Jenkins and Nginx containers
 
 # Stage 1 - Create self signed certificate
 Use your own certs and insert them into certs directory 
+
 or
+
 Generate your certificates (example using .pem format)
 
 cd certs
