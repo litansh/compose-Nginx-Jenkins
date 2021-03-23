@@ -1,16 +1,10 @@
 # compose-Nginx-Jenkins
 docker-compose build Dockerfile Jenkins and Nginx containers
 
-# Stage 1 - Persistent Data
-From the top level of the cloned repository, create the directories that will be used for managing the data on the host:
-
-mkdir -p jenkins_home/ logs/nginx/
-
-
-# Stage 2 - Create self signed certificates
+# Stage 1 - Create self signed certificate
+Use your own certs and insert them into certs directory 
+or
 Generate your certificates (example using .pem format)
-
-mkdir -p certs
 
 cd certs
 openssl req -x509 \
@@ -20,7 +14,7 @@ openssl req -x509 \
   -days 365 \
   -nodes -subj '/CN='$(hostname)
 
-# Stage 3 - Deploy
+# Stage 2 - Deploy
 Use docker-compose from the top level of the repository to run the containers:
 
 docker-compose up -d
@@ -29,7 +23,7 @@ To retrieve the initialAdminPassword:
 
 $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
-# Stage 4 - Enjoy!
+# Stage 3 - Enjoy!
 
 Congrats!
 You have deployed a self-signed TLS reverse proxy to a Jenkins server with persistent data and on-board plugins built by docker-compose.
