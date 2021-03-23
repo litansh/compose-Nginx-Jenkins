@@ -33,9 +33,6 @@ manage to launch the env
 
 in case of the env crashes, we’d like to have the logs of the nginx & jenkins as well as the jenkins home directory saved
 
-#From the top level of the cloned repository, create the directories that will be used for managing the data on the host:
-mkdir -p jenkins_home/ logs/nginx/ certs/
-
 # Bonuses
 
 generate self signed TLS certificates and make the nginx send them to accessing clients (of course the protocol should change to https)
@@ -51,7 +48,12 @@ mercurial
 bitbucket
 make nginx add a ‘X-Forwarded-For’ header 
 
-# Stage 1 - Create self signed certificates
+# Stage 1 - Persistent Data
+From the top level of the cloned repository, create the directories that will be used for managing the data on the host:
+mkdir -p jenkins_home/ logs/nginx/ certs/
+
+
+# Stage 2 - Create self signed certificates
 Generate your certificates (example using .pem format)
 
 mkdir -p certs
@@ -64,7 +66,7 @@ openssl req -x509 \
   -days 365 \
   -nodes -subj '/CN='$(hostname)
 
-# Stage 2 - Deploy
+# Stage 3 - Deploy
 Use docker-compose from the top level of the repository to run the containers:
 
 docker-compose up -d
@@ -73,7 +75,7 @@ To retrieve the initialAdminPassword:
 
 $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
-# Stage 3 - Enjoy!
+# Stage 4 - Enjoy!
 
 Congrats!
 You have deployed a self-signed TLS reverse proxy to a Jenkins server with persistent data and on-board plugins with docker-compose.
