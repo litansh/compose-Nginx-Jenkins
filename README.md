@@ -73,4 +73,8 @@ To retrieve the initialAdminPassword:
 
 $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
+# Stage 3 - Enjoy!
+
+Congrats!
+You have deployed a self-signed TLS reverse proxy to a Jenkins server with persistent data and on-board plugins with docker-compose.
 
