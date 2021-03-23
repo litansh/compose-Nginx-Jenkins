@@ -7,30 +7,30 @@ For the CI server we chose Jenkins that will run inside a docker container. It s
 
 # Objectives:
 
-<h2> Jenkins</h2>
+Jenkins
 
 the jenkins server should:
 run with Java Xmx of 4g
 
-<h2> Nginx</h2> 
+Nginx
 
 the nginx http server should merely serve as a reverse proxy to the Jenkins server and:
 listen on HTTP, port 80 
 forward to port 8080 of the jenkins server
 log every access to the access.log
 
-<h2> Docker Compose</h2>
+Docker Compose
 
 running the docker compose should:
 glue everything together 
 manage to launch the env 
 
 
-<h2> General</h2>
+General
 
 in case of the env crashes, we’d like to have the logs of the nginx & jenkins as well as the jenkins home directory saved
 
-<h2> Bonuses</h2>
+Bonuses
 
 generate self signed TLS certificates and make the nginx send them to accessing clients (of course the protocol should change to https)
 
