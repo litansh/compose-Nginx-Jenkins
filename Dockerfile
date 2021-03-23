@@ -17,6 +17,7 @@ RUN apt-get update && apt-get -y install \
   && apt-get update && apt-get -y install \
     docker-ce-cli
 
+ENV JAVA_OPTS=-Xmx4g
 ENV UID_JENKINS=1000
 ENV GID_JENKINS=1000
 
