@@ -15,14 +15,13 @@ or
 
 Generate your certificates (example using .pem format)
 
-cd certs
-
+```cd certs
 openssl req -x509 \
   -newkey rsa:4096 \
   -keyout self_signed_key.pem \
   -out self_signed_cert.pem \
   -days 365 \
-  -nodes -subj '/CN='$(hostname)
+  -nodes -subj '/CN='$(hostname)```
   
 # Stage 3 - Deploy
 Use docker-compose from the top level of the repository to run the containers:
