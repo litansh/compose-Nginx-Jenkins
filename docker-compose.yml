@@ -27,11 +27,8 @@ services:
       - '80:80'
       - '443:443'
     volumes:
-      - NGINX_DEFAULT_CONF=./nginx/default.conf
-      - NGINX_SSL_CERT=./certs/server.crt
-      - NGINX_SSL_KEY=./certs/server.key
-      - /logs/nginx:/var/log/nginx
       - /nginx/default.con:/etc/nginx/conf.d
+      - /logs/nginx:/var/log/nginx
+      - /certs:/etc/nginx/ssl
       - /certs:/etc/nginx/ssl
     restart: always
-
