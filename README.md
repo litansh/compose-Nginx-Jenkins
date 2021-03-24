@@ -10,12 +10,12 @@ git clone https://github.com/litansh/compose-Nginx-Jenkins.git
 
 # Stage 2 - Create self signed certificate
 Use your own certs and insert them into certs directory 
-Just do not forget to edit the docker-compose.yml file:
+Just do not forget to edit the /nginx/default.con/default.conf file:
 
 ```
 ...
-      - NGINX_SSL_CERT=./certs/server.crt                  # edit to your cert
-      - NGINX_SSL_KEY=./certs/server.key                   # edit to your key
+    ssl_certificate /etc/nginx/ssl/server.crt;                  # edit to your cert
+    ssl_certificate_key /etc/nginx/ssl/server.key;              # edit to your key
 ...
 ```
 
