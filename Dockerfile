@@ -1,5 +1,5 @@
 FROM jenkins/jenkins:lts
-MAINTAINER Litan Shmair <litansh@gmail.com>
+MAINTAINER Litan Shamir <litansh@gmail.com>
 
 USER root
 RUN apt-get update && apt-get -y install \
